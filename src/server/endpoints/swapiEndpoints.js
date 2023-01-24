@@ -8,10 +8,14 @@ const applySwapiEndpoints = (server, app) => {
     });
 
     server.get('/hfswapi/getPeople/:id', async (req, res) => {
+        const {isWookie} = req.params
+        const person = PeopleFactory.create(isWookie).getById(id)
         res.sendStatus(501);
     });
 
     server.get('/hfswapi/getPlanet/:id', async (req, res) => {
+        const {isWookie} = req.params
+        const planet = PlanetFactory.create(isWookie).getById(id)
         res.sendStatus(501);
     });
 
